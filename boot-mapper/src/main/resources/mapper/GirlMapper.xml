@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.mars.dao.GirlDao">
+    <!--<resultMap id="BaseResultMap" type="com.mars.model.Girl">-->
+        <!--<result column="id" property="id" />-->
+        <!--<result column="cup_size" property="cupSize" />-->
+        <!--<result column="age" property="age" />-->
+        <!--<result column="money" property="money" />-->
+    <!--</resultMap>-->
+
+    <!--<parameterMap id="Girl" type="com.mars.model.Girl"/>-->
+
+    <sql id="Base_Column_List">
+        id, cup_size, age, money
+    </sql>
+
+    <select id="list" resultType="Girl">
+        select
+        <include refid="Base_Column_List" />
+        from girl
+    </select>
+
+</mapper>
