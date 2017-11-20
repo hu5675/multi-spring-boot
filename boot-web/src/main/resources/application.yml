@@ -3,10 +3,25 @@ spring:
     view:
       prefix: /templates/
   datasource:
+      url: jdbc:mysql://localhost:3306/dbgirl?useUnicode=true&characterEncoding=utf8&useSSL=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+master:
+  datasource:   #主库
     url: jdbc:mysql://localhost:3306/dbgirl?useUnicode=true&characterEncoding=utf8&useSSL=true
     username: root
     password: root
-    driver-class-name: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.jdbc.Driver
+
+cluster:
+  datasource:   #从库
+      url: jdbc:mysql://rm-bp1e5wj1225x3b702o.mysql.rds.aliyuncs.com:3306/dbgirl_cluster?useUnicode=true&characterEncoding=utf8&useSSL=true
+      username: root
+      password: Khjk2017
+      driverClassName: com.mysql.jdbc.Driver
+
+
 
 mybatis:
 #  mapper-locations: classpath:mapper/*.xml
