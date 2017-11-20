@@ -9,7 +9,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+#  mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.mars.model
   configuration:
     map-underscore-to-camel-case: true
