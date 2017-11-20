@@ -1,6 +1,8 @@
 package com.mars.controller;
 
 import com.mars.model.Girl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +20,14 @@ import java.util.*;
 @RequestMapping
 public class HelloController {
 
+    private final static Logger logger = LoggerFactory.getLogger(HelloController.class);
+
     @GetMapping(value = "/hello/say")
     public String say(HttpServletRequest request) throws IOException {
 
         Girl girl = new Girl();
-        System.out.println(girl);
+        logger.info(girl.toString());
+        System.out.println("RealPath:"+request.getServletContext().getRealPath("/"));
         return "客户端ip:" + this.getIp() + "，服务器ip:" + this.getIp();
     }
 
