@@ -1,5 +1,7 @@
 package com.mars.controller;
 
+import com.mars.enums.ResultEnum;
+import com.mars.exception.GlobalException;
 import com.mars.model.Girl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +31,11 @@ public class HelloController {
         logger.info(girl.toString());
         System.out.println("RealPath:"+request.getServletContext().getRealPath("/"));
         return "客户端ip:" + this.getIp() + "，服务器ip:" + this.getIp();
+    }
+
+    @GetMapping(value = "/hello/exception")
+    public String exception(HttpServletRequest request) throws GlobalException {
+        throw new GlobalException(ResultEnum.UNKONW_ERROR);
     }
 
     private String getIp() throws SocketException {
