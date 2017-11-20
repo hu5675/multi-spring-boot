@@ -3,7 +3,11 @@ package com.mars.controller;
 import com.mars.model.User;
 import com.mars.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+
 
 @RestController
 @RequestMapping
@@ -15,5 +19,14 @@ public class UserRestController {
     @GetMapping(value = "/api/user")
     public User findByName(@RequestParam(value = "userName", required = true) String userName) {
         return userService.findByName(userName);
+    }
+
+    @PostMapping(value = "/api/user")
+    public User userAdd(@Valid User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()){
+            System.out.println(bindingResult.getFieldError("userName").getDefaultMessage());
+            return new User();
+        }
+        return  user;
     }
 }

@@ -1,5 +1,10 @@
 package com.mars.model;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotNull;
+
+
 public class User {
     /**
      * 城市编号
@@ -9,6 +14,9 @@ public class User {
     /**
      * 城市名称
      */
+
+    @NotNull(message = "名称不能为空")
+    @Length(message = "长度必须大于4",min = 4)
     private String userName;
 
     /**
