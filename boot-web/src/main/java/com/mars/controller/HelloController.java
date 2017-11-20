@@ -1,12 +1,9 @@
 package com.mars.controller;
 
-import com.mars.dao.GirlDao;
 import com.mars.model.Girl;
-import com.mars.service.GirlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,12 +43,4 @@ public class HelloController {
         return ipList.toString();
     }
 
-    @Autowired
-    private GirlService girlService;
-
-
-    @GetMapping(value = "/girl/list")
-    public List<Girl> girlList(){
-        return girlService.list();
-    }
 }
