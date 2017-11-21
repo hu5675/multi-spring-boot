@@ -1,6 +1,10 @@
 package com.mars.model;
 
-public class City {
+import java.io.Serializable;
+
+public class City implements Serializable{
+    private static final long serialVersionUID = -1L;
+
     /**
      * 城市编号
      */
@@ -51,5 +55,15 @@ public class City {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", provinceId=" + provinceId +
+                ", cityName='" + cityName + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

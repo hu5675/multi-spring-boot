@@ -22,3 +22,4 @@ bin-release/
 **.iml
 **/mvnw*
 */.mvn
+**.log

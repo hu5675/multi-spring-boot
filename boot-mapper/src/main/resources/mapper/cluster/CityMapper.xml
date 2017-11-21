@@ -21,4 +21,10 @@
 		where city_name = #{cityName}
 	</select>
 
+	<select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from city
+		where id = #{id}
+	</select>
 </mapper>
