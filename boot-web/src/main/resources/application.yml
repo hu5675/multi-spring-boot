@@ -8,6 +8,8 @@ spring:
       username: root
       password: root
       driver-class-name: com.mysql.jdbc.Driver
+## 应用启动时先执行的数据库结构sql
+#      schema: import.sql
   application:
     name: bootweb
   redis:
@@ -28,6 +30,7 @@ spring:
       min-idle: 0
     ## 连接超时时间（毫秒）
     timeout: 0
+
 master:
   datasource:   #主库
     url: jdbc:mysql://localhost:3306/dbgirl?useUnicode=true&characterEncoding=utf8&useSSL=true
@@ -46,10 +49,16 @@ cluster:
 
 mybatis:
 #  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.mars.model
+#  type-aliases-package: com.mars.model
   configuration:
     map-underscore-to-camel-case: true
+
 
 #log
 logging:
   config: classpath:logback-spring.xml
+  level:
+## 只打印日志级别warn的日志
+#    root: warn
+## 打印sql
+    com.mars.dao: trace

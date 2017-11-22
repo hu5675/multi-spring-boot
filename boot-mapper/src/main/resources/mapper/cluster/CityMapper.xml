@@ -8,7 +8,7 @@
 		<result column="description" property="description" />
 	</resultMap>
 
-	<parameterMap id="City" type="com.mars.model.City"/>
+	<!--<parameterMap id="City" type="com.mars.model.City"/>-->
 
 	<sql id="Base_Column_List">
 		id, province_id, city_name, description
@@ -27,4 +27,15 @@
 		from city
 		where id = #{id}
 	</select>
+
+	<insert id="insertCity" useGeneratedKeys="true" keyProperty="city.id" parameterType="com.mars.model.City">
+		<!--<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="city.id">-->
+			<!--SELECT LAST_INSERT_ID()-->
+		<!--</selectKey>-->
+		insert into city(province_id,city_name,description) VALUES (#{city.provinceId},#{city.cityName},#{city.description})
+	</insert>
+
+	<delete id="deleteCityById" parameterType="java.lang.Long">
+		delete from city where id = #{id}
+	</delete>
 </mapper>

@@ -28,14 +28,14 @@ public class HttpAspect {
         //url
         logger.info("url={}", request.getRequestURL());
 
-        //method
-        logger.info("method={}", request.getMethod());
-
-        //ip
-        logger.info("ip={}", request.getRemoteAddr());
-
-        //类方法
-        logger.info("class_method={}", joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+//        //method
+//        logger.info("method={}", request.getMethod());
+//
+//        //ip
+//        logger.info("ip={}", request.getRemoteAddr());
+//
+//        //类方法
+//        logger.info("class_method={}", joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
 
         //参数
         logger.info("args={}", joinPoint.getArgs());
@@ -43,13 +43,15 @@ public class HttpAspect {
 
     @After("log()")
     public void  doAfter(JoinPoint joinPoint){
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = attributes.getRequest();
-        logger.info("after url = {}",request.getRequestURL());
+//        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+//        HttpServletRequest request = attributes.getRequest();
+//        logger.info("after url = {}",request.getRequestURL());
     }
 
     @AfterReturning(returning = "object",pointcut = "log()")
-    public  void doAfterReturning(Object object){
-        logger.info("response = {}",object.toString());
+    public void doAfterReturning(Object object){
+        if (object != null) {
+            logger.info("response = {}", object.toString());
+        }
     }
 }
