@@ -1,5 +1,7 @@
 package com.mars.controller;
 
+import com.mars.enums.ResultEnum;
+import com.mars.exception.GlobalException;
 import com.mars.model.User;
 import com.mars.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +24,12 @@ public class UserRestController {
     }
 
     @PostMapping(value = "/api/user")
-    public User userAdd(@Valid User user, BindingResult bindingResult) {
+    public void userAdd(@Valid User user, BindingResult bindingResult) throws GlobalException {
         if (bindingResult.hasErrors()){
             System.out.println(bindingResult.getFieldError("userName").getDefaultMessage());
-            return new User();
+            throw new GlobalException(ResultEnum.UNKONW_ERROR);
         }
-        return  user;
+        this.userService.inserUser(user);
     }
+
 }

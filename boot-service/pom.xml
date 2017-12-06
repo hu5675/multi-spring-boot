@@ -35,6 +35,11 @@
 			<artifactId>boot-mapper</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+        <dependency>
+            <groupId>com.mars</groupId>
+            <artifactId>boot-exception</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 
 	<build>

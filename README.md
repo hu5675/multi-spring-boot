@@ -14,3 +14,7 @@ V0.0.5: 统一异常处理
 V0.0.6: AOP 日志统一拦截处理
 
 V0.0.7: validation 请求校验
+
+V0.0.8: 本地 Redis 缓存使用
+
+V0.0.9: 本地 Redis 缓存使用 注解形式 @Cacheble @CachePut @CacheEvict

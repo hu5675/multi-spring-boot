@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Properties;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class BootMapperApplication {
 
 	public static void main(String[] args) throws IOException {

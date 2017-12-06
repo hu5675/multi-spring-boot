@@ -19,5 +19,9 @@
 		from user
 		where id = 1
 	</select>
+	
+	<insert id="insertUser" parameterType="com.mars.model.User">
+		INSERT into user(user_name,description) VALUES (#{user.userName},#{user.description})
+	</insert>
 
 </mapper>

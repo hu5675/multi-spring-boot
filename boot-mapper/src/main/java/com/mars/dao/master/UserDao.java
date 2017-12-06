@@ -6,4 +6,6 @@ import org.apache.ibatis.annotations.Param;
 public interface UserDao {
 
     User findByName(@Param("userName") String userName);
+
+    void insertUser(@Param("user") User user);
 }
