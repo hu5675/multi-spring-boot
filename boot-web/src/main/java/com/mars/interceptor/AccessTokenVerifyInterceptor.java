@@ -1,4 +1,4 @@
-package com.mars.Interceptor;
+package com.mars.interceptor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
