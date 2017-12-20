@@ -18,3 +18,11 @@ V0.0.7: validation 请求校验
 V0.0.8: 本地 Redis 缓存使用
 
 V0.0.9: 本地 Redis 缓存使用 注解形式 @Cacheble @CachePut @CacheEvict
+
+V0.1.0: mybatis 使用事务
+
+V0.1.1: Interceptor 拦截器配置
+
+V0.1.2: Spring 自带的 Scheduled 定时任务
+
+V0.1.3: 使用Quartz 实现 定时任务

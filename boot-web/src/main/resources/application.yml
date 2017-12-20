@@ -62,3 +62,9 @@ logging:
 #    root: warn
 ## 打印sql
     com.mars.dao: trace
+
+quartz:
+  enabled: true
+
+samplejob:
+  frequency: 2000
