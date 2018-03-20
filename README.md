@@ -26,3 +26,5 @@ V0.1.1: Interceptor 拦截器配置
 V0.1.2: Spring 自带的 Scheduled 定时任务
 
 V0.1.3: 使用Quartz 实现 定时任务
+
+V0.1.4: Mongodb集成
